@@ -7,7 +7,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { NavComponent } from './comunes/nav/nav.component';
 import { ListadoProductosComponent } from './productos/listado-productos/listado-productos.component';
 import { ListadoClientesComponent } from './clientes/listado-clientes/listado-clientes.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import { ListadoClientesComponent } from './clientes/listado-clientes/listado-cl
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

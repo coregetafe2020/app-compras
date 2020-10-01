@@ -5,5 +5,16 @@
                 <h1>Listado de Productos</h1>
             </div>
         </div>
+        <hr>
+        <table class="clientes">
+            <tr>
+                <th>Nombre</th>
+                <th>Código SKU</th>
+            </tr>
+            <tr *ngFor="let producto of productos">
+                <td>{{producto?.nombre}}</td>
+                <td>{{producto?.sku}}</td>
+            </tr>
+        </table>
     </div>
 </div>
