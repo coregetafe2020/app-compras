@@ -28,7 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/main.scss"
             ],
             "scripts": []
           },
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "compras"
+    }
+  },
+  "defaultProject": "compras",
+  "cli": {
+    "analytics": "e8549cab-bf77-4b94-aa8d-85961a147ce5"
+  }
 }
