@@ -40,5 +40,14 @@ export class ProductosService {
                       )
     }
 
+    putProducto(_id: string, producto: any) {
+      return this.http.put(this.endPointProducto + '/' + _id, producto)
+                      .pipe(
+                        map((res: any) => {
+                          return res
+                        })
+                      )
+    }
+
 
 }

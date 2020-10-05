@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BreadcrumbComponent implements OnInit {
 
-  rutas: any;
+  rutas: Array<any>;
 
   constructor(private activedRoute: ActivatedRoute) { }
 

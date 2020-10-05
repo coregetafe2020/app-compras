@@ -41,7 +41,9 @@ const routes: Routes = [
       {ruta: '/editar-producto/:_id', texto: 'Editar producto'}
     ]}
   },
-  {path: '**', component: InicioComponent}
+  {
+    path: '**', redirectTo: '/'
+  }
 ];
 
 @NgModule({
