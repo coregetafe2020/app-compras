@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ListadoClientesComponent } from './clientes/listado-clientes/listado-clientes.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { CrearProductoComponent } from './productos/crear-producto/crear-producto.component';
+import { EditarProductoComponent } from './productos/editar-producto/editar-producto.component';
 import { ListadoProductosComponent } from './productos/listado-productos/listado-productos.component';
 
 const routes: Routes = [
@@ -31,7 +32,16 @@ const routes: Routes = [
       {ruta: '/listado-productos', texto: 'Listado de productos'},
       {ruta: '/crear-producto', texto: 'Nuevo producto'}
     ]}
-  }
+  },
+  {
+    path: 'editar-producto/:_id', component: EditarProductoComponent,
+    data: {rutas: [
+      {ruta:'/', texto: 'Inicio'},
+      {ruta: '/listado-productos', texto: 'Listado de productos'},
+      {ruta: '/editar-producto/:_id', texto: 'Editar producto'}
+    ]}
+  },
+  {path: '**', component: InicioComponent}
 ];
 
 @NgModule({

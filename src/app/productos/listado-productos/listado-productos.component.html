@@ -12,10 +12,16 @@
             <tr>
                 <th>Nombre</th>
                 <th>Código SKU</th>
+                <th></th>
             </tr>
             <tr *ngFor="let producto of productos">
                 <td>{{producto?.nombre}}</td>
                 <td>{{producto?.sku}}</td>
+                <td>
+                    <button class="warning" routerLink="/editar-producto/{{producto._id}}">
+                        <img src="assets/edit.svg">
+                    </button>
+                </td>
             </tr>
         </table>
     </div>
