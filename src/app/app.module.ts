@@ -10,6 +10,8 @@ import { ListadoClientesComponent } from './clientes/listado-clientes/listado-cl
 import { HttpClientModule } from '@angular/common/http';
 import { CrearProductoComponent } from './productos/crear-producto/crear-producto.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BreadcrumbComponent } from './comunes/breadcrumb/breadcrumb.component';
+import { EditarProductoComponent } from './productos/editar-producto/editar-producto.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ListadoProductosComponent,
     ListadoClientesComponent,
     CrearProductoComponent,
+    BreadcrumbComponent,
+    EditarProductoComponent,
   ],
   imports: [
     BrowserModule,

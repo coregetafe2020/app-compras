@@ -6,10 +6,32 @@ import { CrearProductoComponent } from './productos/crear-producto/crear-product
 import { ListadoProductosComponent } from './productos/listado-productos/listado-productos.component';
 
 const routes: Routes = [
-  {path:'', component: InicioComponent},
-  {path: 'listado-productos', component: ListadoProductosComponent},
-  {path: 'listado-clientes', component: ListadoClientesComponent},
-  {path: 'crear-producto', component: CrearProductoComponent}
+  {
+    path:'', component: InicioComponent, 
+    data: {rutas: [{ruta:'/', texto: 'Inicio'}]}
+  },
+  {
+    path: 'listado-productos', component: ListadoProductosComponent,
+    data: {rutas: [
+            {ruta:'/', texto: 'Inicio'},
+            {ruta: '/listado-productos', texto: 'Listado de productos'}
+          ]}
+  },
+  {
+    path: 'listado-clientes', component: ListadoClientesComponent,
+    data: {rutas: [
+      {ruta:'/', texto: 'Inicio'},
+      {ruta: '/listado-clientes', texto: 'Listado de clientes'}
+    ]}
+  },
+  {
+    path: 'crear-producto', component: CrearProductoComponent,
+    data: {rutas: [
+      {ruta:'/', texto: 'Inicio'},
+      {ruta: '/listado-productos', texto: 'Listado de productos'},
+      {ruta: '/crear-producto', texto: 'Nuevo producto'}
+    ]}
+  }
 ];
 
 @NgModule({
