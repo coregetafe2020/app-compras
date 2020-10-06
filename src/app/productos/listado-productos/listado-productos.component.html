@@ -34,5 +34,7 @@
                 </td>
             </tr>
         </table>
+        <p *ngIf="consultando">Espere...</p>
+        <p *ngIf="productos?.length === 0">No se encontraron productos</p>
     </div>
 </div>

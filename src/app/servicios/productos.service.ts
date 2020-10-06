@@ -31,6 +31,15 @@ export class ProductosService {
                       )
     }
 
+    getBusquedaProducto(termino) {
+      return this.http.get(this.endPointProducto + '/busqueda/' + termino)
+                      .pipe(
+                        map((res: any) => {
+                          return res
+                        })
+                      )
+    }
+
     postProducto(producto: Producto) {
       return this.http.post(this.endPointProducto, producto)
                       .pipe(
