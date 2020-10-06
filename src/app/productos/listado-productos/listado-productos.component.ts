@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Producto } from 'src/app/models/producto.model';
 import { ProductosService } from 'src/app/servicios/productos.service';
 
@@ -14,20 +15,47 @@ class ResProducto {
 export class ListadoProductosComponent implements OnInit {
 
   productos: Array<Producto>;
+  formSearch: FormGroup;
+
+  @ViewChild('search', {static: false}) searchRef: ElementRef;
 
   constructor(private productosService: ProductosService) {}
 
   ngOnInit(): void {
-      this.productosService.getProductos()
-                            .subscribe(
-                              (res: ResProducto) => {
-                                this.productos = res.productos;
-                                console.log(this.productos)
-                              },
-                              (err: any) => {
-                                console.log(err);
-                              }
-                              )
+    this.loadProductos();
+    this.formSearch = new FormGroup({
+      search: new FormControl('')
+    })
+  }
+
+  loadProductos() {
+    this.productosService.getProductos()
+                        .subscribe(
+                          (res: ResProducto) => {
+                            this.productos = res.productos;
+                            console.log(this.productos)
+                          },
+                          (err: any) => {
+                            console.log(err);
+                          }
+                          )
+  }
+
+  removeProducto(_id) {
+    this.productosService.deleteProducto(_id)
+                        .subscribe(
+                          (res: any) => {
+                            console.log(res);
+                            this.loadProductos();
+                          },
+                          (err: any) => {
+                            console.log(err);
+                          }
+                        )
+  }
+
+  showSearch() {
+    this.searchRef.nativeElement.classList.add('open');
   }
 
 }

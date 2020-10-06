@@ -1,9 +1,16 @@
 <div class="container">
     <app-breadcrumb></app-breadcrumb>
     <div class="card">
-        <div class="fila">
+        <div class="fila">  
             <div class="col-100 titulo">
-                <h1>Listado de Productos</h1>
+                <form class="buscador" [formGroup]="formSearch">
+                    <label (click)="showSearch()">
+                        <img src="assets/search.svg">
+                    </label>
+                    <input #search type="search" 
+                           placeholder="Nombre producto..."
+                           formControlName="search">
+                </form>
                 <button routerLink="/crear-producto">Añadir producto</button>
             </div>
         </div>
@@ -20,6 +27,9 @@
                 <td>
                     <button class="warning" routerLink="/editar-producto/{{producto._id}}">
                         <img src="assets/edit.svg">
+                    </button>
+                    <button class="danger m-l-small" (click)="removeProducto(producto._id)">
+                        <img src="assets/trash.svg">
                     </button>
                 </td>
             </tr>

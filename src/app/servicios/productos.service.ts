@@ -48,6 +48,15 @@ export class ProductosService {
                         })
                       )
     }
+    
+    deleteProducto(_id) {
+      return this.http.delete(this.endPointProducto + '/' + _id)
+                      .pipe(
+                        map((res: any) => {
+                          return res
+                        })
+                      )
+    }
 
 
 }
